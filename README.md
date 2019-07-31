@@ -2,7 +2,7 @@
 
 1. Escriba un programa que llame un ```fork()```. Antes del llamado del ```fork()```, declare una variable de acceso (por ejemplo, ```x```) y asígnele un valor (por ejemplo, ```100```). Responda las siguientes preguntas:
   * ¿Cuál es el valor de la variable en el proceso hijo?
-  Apenas se realiza el fork, el valor de la variable en el proceso hijo es el mismo que el de la variable del proceso padre.
+   Apenas se realiza el fork, el valor de la variable en el proceso hijo es el mismo que el de la variable del proceso padre.
   * ¿Qué sucede con la variable cuando el proceso hijo y el padre cambian el valor de ```x```?
   Las variables en cada proceso no se encuentran relacionas ya que pertenecen a imagenes de procesos diferentes y por lo tanto son diferentes a pesar de estar identificadas con un mismo nombre.
 2. Escriba un programa que abra un archivo (con la llamada ```open()```) y entonces llame a ```fork()```. **Nota**: El siguiente [enlace](https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read-write/) puede ser de utilidad para entender la llamada ```open()```.
