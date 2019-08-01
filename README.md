@@ -25,4 +25,5 @@ El PID del hijo.
 Retorna un -1 (falla), ya que el proceso hijo no tiene más hijos en este caso.
 6. Haga un programa, como el del ejercicio anterior, con una breve modificación, la cual consiste en usar ```waitpid()``` en lugar de ```wait()```. ¿Cuándo podría ser ```waitpid()``` útil?  
 Waitpid es útil cuando el proceso padre tiene más de un proceso hijo, pero sólo necesita esperar a un hijo o a un grupo en específico de ellos. 
-7. Escriba un programa que cree un proceso hijo y entonces en el proceso hijo cierre la salida estandar (```STDOUT FILENO```). ¿Qué pasa si el hijo llama ```printf()``` para imprimir alguna salida después de cerrar el descriptor?
+7. Escriba un programa que cree un proceso hijo y entonces en el proceso hijo cierre la salida estandar (```STDOUT FILENO```). ¿Qué pasa si el hijo llama ```printf()``` para imprimir alguna salida después de cerrar el descriptor?  
+El hijo no puede imprimir nada (pero el padre sí).
