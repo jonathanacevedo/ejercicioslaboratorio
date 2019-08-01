@@ -14,14 +14,14 @@ int main(int argc, char *argv[])
         fprintf(stderr, "fork fallo \n");
         exit(1);
     } else if (rc == 0) {            // proceso hijo (nuevo proceso)
-       printf("Proceso hijo %d \n",(int) getpid());
+       printf("PID del proceso hijo: %d \n",(int) getpid());
 
     } else {                         // proceso padre
 
-       int wc = waitpid(rc, &status, WNOHANG|WUNTRACED);
-       printf("Wait retorna: %d \n", wc);                
-       printf("Proceso padre %d \n",(int) getpid());
-
+       int wc = waitpid(rc, &status, WCONTINUED);
+       printf("PID del proceso padre: %d \n",(int) getpid());
+       printf("Waitpid retorna: %d \n\n", wc);                
+       
     }
 
 
