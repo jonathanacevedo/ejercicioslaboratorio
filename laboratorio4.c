@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -37,8 +38,8 @@ int main(int argc, char *argv[])
                     wait(NULL);                    
                     printf("PROCESO 5\n");
                     char* envp[] = { "some", "environment", NULL };
-                    char *const argv[] = {"/bin/ls", NULL};
-                    execve(argv[0], argv, envp);
+                    char *const argv[] = {"ls", NULL};
+                    execvpe(argv[0], argv, envp);
                     }
 
                 }else {
@@ -68,3 +69,4 @@ int main(int argc, char *argv[])
     }
 
     return 0;
+}
